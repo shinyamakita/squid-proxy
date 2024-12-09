@@ -13,13 +13,13 @@ RUN mkdir -p /etc/squid/ssl_cert /var/spool/squid /etc/squid/ssl_db /var/run/squ
     && chmod 700 /etc/squid/ssl_db
 
 # Copy certificates
-COPY ./certs/squidCA.pem /etc/squid/ssl_cert/
-COPY ./certs/squidCA.key /etc/squid/ssl_cert/
-COPY ./certs/server.crt /etc/squid/ssl_cert/
-COPY ./certs/server.key /etc/squid/ssl_cert/
-RUN chmod 600 /etc/squid/ssl_cert/squidCA.key \
-   && chmod 600 /etc/squid/ssl_cert/server.key \
-   && chown -R proxy:proxy /etc/squid/ssl_cert/
+# COPY ./certs/squidCA.pem /etc/squid/ssl_cert/
+# COPY ./certs/squidCA.key /etc/squid/ssl_cert/
+# COPY ./certs/server.crt /etc/squid/ssl_cert/
+# COPY ./certs/server.key /etc/squid/ssl_cert/
+# RUN chmod 600 /etc/squid/ssl_cert/squidCA.key \
+#    && chmod 600 /etc/squid/ssl_cert/server.key \
+#    && chown -R proxy:proxy /etc/squid/ssl_cert/
 
 # pid file
 RUN mkdir -p /var/run/squid \
@@ -34,6 +34,5 @@ COPY entrypoint.sh /entrypoint.sh
 RUN chmod +x /entrypoint.sh
 
 EXPOSE 3128
-# ENV HOSTNAME=proxy.local
 USER proxy
 ENTRYPOINT ["/entrypoint.sh"]
