@@ -1,0 +1,25 @@
+# Certificates
+docker/certs/
+*.crt
+*.key
+
+# cicd
+docker/cicd.sh
+
+# Terraform
+terraform/.terraform/
+terraform/*.tfstate
+terraform/*.tfstate.*
+terraform/*.tfvars
+terraform/.terraform.lock.hcl
+
+# Logs
+*.log
+
+# OS specific
+.DS_Store
+Thumbs.db
+
+# Local env files
+.env
+*.env

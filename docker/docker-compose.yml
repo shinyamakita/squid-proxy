@@ -1,0 +1,15 @@
+version: "3.8"
+
+services:
+  squid:
+    build:
+      context: .
+      dockerfile: ./proxy/Dockerfile
+    ports:
+      - "3128:3128"
+    restart: unless-stopped
+    platform: linux/amd64
+  
+networks:
+  proxy-net:
+    driver: bridge
