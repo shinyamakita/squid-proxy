@@ -1,7 +1,7 @@
 # HTTP Proxy Server
 
 ## Introduction
-This project provides a HTTP proxy server to access Japanese services from outside Japan. Currently, this project supports HTTP proxy only.
+This project provides a HTTP proxy server to access specific area services from outside Japan. Currently, this project supports HTTP proxy only.
 
 ## Prerequisites
 - Azure CLI
