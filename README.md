@@ -4,22 +4,17 @@
 This project provides a HTTP proxy server to access specific country services from another countries. Currently, this project supports HTTP proxy only.
 
 ## Prerequisites
-- Azure CLI
-- Azure Resource Group in your preferred region
+- AWS Secret Key
 - Docker (for local testing)
 - Docker Compose (for local testing)
+- Terraform
 
-## Deployment to Azure Container Instance
+## Deployment to AWS
 ```bash
-az container create \
-  --resource-group <YOUR-RESOURCE-GROUP> \
-  --name squid-proxy \
-  --image docker.io/shinya99/squid-proxy:latest \
-  --cpu 0.3 \
-  --memory 0.3 \
-  --ports 3128 \
-  --dns-name-label <UNIQUE-DNS-NAME> \
-  --protocol tcp
+cd terraform/environments/prd
+terraform init
+terraform plan
+terraform apply
 ```
 
 ## Local Testing
@@ -43,7 +38,7 @@ MIT License
 
 ## About Me
 
-👋 Hi! I'm a Cloud Engineer specializing in Azure, AWS and containerization. 
+👋 Hi! I'm a Cloud Engineer specializing in Azure, AWS and containerization with Terraform. 
 Always excited about new cloud technology opportunities!
 
 💼 Available for consulting and freelance projects
