@@ -7,11 +7,11 @@ docker/certs/
 docker/cicd.sh
 
 # Terraform
-terraform/.terraform/*
-terraform/*/*.tfstate
-terraform/*/*.tfstate.*
-terraform/*/*.tfvars
-terraform/*/.terraform.lock.hcl
+terraform/enbironments/*/.terraform/*
+terraform/enbironments/*/*.tfstate
+terraform/enbironments/*/*.tfstate.*
+terraform/enbironments/*/*.tfvars
+terraform/enbironments/*/.terraform.lock.hcl
 
 
 # Logs
