@@ -10,6 +10,10 @@ chmod 700 /var/spool/squid/ssl_db
 mkdir -p /var/run/squid/cache
 chown -R proxy:proxy /var/run/squid
 
+# replace proxy ip address
+PROXY_IP=${PROXY_IP:-"127.0.0.1"}
+sed -i "s/PROXY_IP_PLACEHOLDER/${PROXY_IP}/" /etc/squid/squid.conf
+
 # # Initialize cache directories
 squid -z
 

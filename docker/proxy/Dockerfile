@@ -8,9 +8,9 @@ RUN apt-get update && apt-get install -y \
 
 # Create directories
 RUN mkdir -p /etc/squid/ssl_cert /var/spool/squid /etc/squid/ssl_db /var/run/squid \
-    && chown -R proxy:proxy /etc/squid/ssl_cert /var/spool/squid /etc/squid/ssl_db /var/run/squid \
-    && chmod 750 /var/spool/squid \
-    && chmod 700 /etc/squid/ssl_db
+   && chown -R proxy:proxy /etc/squid/ssl_cert /var/spool/squid /etc/squid/ssl_db /var/run/squid \
+   && chmod 750 /var/spool/squid \
+   && chmod 700 /etc/squid/ssl_db
 
 # Copy certificates
 # COPY ./certs/squidCA.pem /etc/squid/ssl_cert/
@@ -21,13 +21,15 @@ RUN mkdir -p /etc/squid/ssl_cert /var/spool/squid /etc/squid/ssl_db /var/run/squ
 #    && chmod 600 /etc/squid/ssl_cert/server.key \
 #    && chown -R proxy:proxy /etc/squid/ssl_cert/
 
-# pid file
+# squid file
 RUN mkdir -p /var/run/squid \
    && chown proxy:proxy /var/run/squid \
    && chmod 755 /var/run/squid
 
 # Copy configuration file
 COPY ./proxy/squid.conf /etc/squid/squid.conf
+RUN chmod 777 /etc/squid \
+   && chmod 777 /etc/squid/squid.conf
 
 # Copy start script
 COPY entrypoint.sh /entrypoint.sh
