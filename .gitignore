@@ -12,7 +12,8 @@ terraform/environments/*/*.tfstate
 terraform/environments/*/*.tfstate.*
 terraform/environments/*/*.tfvars
 terraform/environments/*/.terraform.lock.hcl
-terraform/environments/*/terraform.*
+terraform/environments/*/terraform*
+terraform/environments/prd/terraform.tfstate
 
 
 # Logs
